@@ -1,16 +1,18 @@
 package com.bhupendra.practice.springbootkafkaproducer.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
 public class Customer {
 
     private String firstName;
     private String lastName;
-
-    @Autowired
     private Address address;
+
+    public Customer() {}
+
+    public Customer(String firstName, String lastName, Address address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -34,5 +36,14 @@ public class Customer {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }
